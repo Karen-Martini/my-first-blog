@@ -5,12 +5,17 @@
     <body>
         <div>
             <h1>Karen Martini</h1>
-        </div>
 
-        <div>
-            <p>published: 25.03.2017, 16:20</p>
-            <em>My first post</em>
-            <p>To feliz.</p>
-        </div>
+            <div> 
+          {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+            </div>
 
-       
+        </div>
+    </body>
+</html>
